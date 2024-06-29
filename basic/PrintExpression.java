@@ -12,7 +12,7 @@ public class PrintExpression {
         z = sc.nextInt();
         t = sc.nextInt();
         System.out.printf("%d,%d,%d,%d\n", y,z,x,t);
-        System.out.println(x+y+z+t);
+        System.out.println(1L*x+y+z+t);
         System.out.println(1L*(x-y+1L*z*t));
         
     }
