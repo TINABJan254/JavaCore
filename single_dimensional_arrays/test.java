@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class test {
     public static void main(String[] args) {
@@ -37,6 +39,7 @@ public class test {
 //        
 //        c1.forEach((x) -> System.out.print(x + " "));
         System.out.println(Arrays.binarySearch(a, 2));
+        Set<Integer> se = new HashSet<>();
         
     }
 }
