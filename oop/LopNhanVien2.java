@@ -39,7 +39,7 @@ class NhanVien{
         this.mnv = "00001";
     }
     
-    void chuanHoa(){
+    public void chuanHoa(){
         //chuan hoa ten
         String res = "";
         ten = ten.toLowerCase();
@@ -70,7 +70,7 @@ class NhanVien{
         nHD = sb2.toString();
     }
     
-    void inTT(){
+    public void inTT(){
         System.out.print(mnv + " " + ten + " " + nsinh);
         System.out.println(" " + dchi + " " + ms + " " + nHD);
     }

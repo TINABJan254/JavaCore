@@ -1,4 +1,4 @@
-package oop;
+package oop.lop_set2;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -16,24 +16,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
-public class test {
-
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        if (6.01 - (int)6.5 == 0)
-            System.out.println("YES");
-        BigInteger x;
-        
+        WordSet s1 = new WordSet(sc.nextLine());
+        WordSet s2 = new WordSet(sc.nextLine());
+        System.out.println(s1.union(s2));
+        System.out.println(s1.intersection(s2));
     }
-}
-
-class T{
-    private int x;
-    private int y;
-  
-    T(){
-        x = 1;
-        y = 10;
-    }
-    
 }

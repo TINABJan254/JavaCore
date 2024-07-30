@@ -19,18 +19,17 @@ import java.util.TreeMap;
 public class LopSinhVien3 {
     public static void main(String[] args) {
         Scanner sc =  new Scanner(System.in);
-        SinhVien x = new SinhVien("SV001", sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextDouble());
+        SinhVien4 x = new SinhVien4("SV001", sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextDouble());
         x.ChuanHoa();
-        String res = x.toString();
-        System.out.println(res);
+        System.out.println(x);
     }
 }
 
-class SinhVien{
+class SinhVien4{
     private String msv, ten, lop, nsinh;
     private double gpa;
     
-    SinhVien(){
+    public SinhVien4(){
         msv = "";
         ten = "";
         lop = "";
@@ -38,7 +37,7 @@ class SinhVien{
         gpa = 0;
     }
     
-    SinhVien(String msv, String ten, String lop, String nsinh, double gpa){
+    public SinhVien4(String msv, String ten, String lop, String nsinh, double gpa){
         this.msv = msv;
         this.ten = ten;
         this.nsinh = nsinh;
@@ -57,7 +56,8 @@ class SinhVien{
         nsinh = s.toString();
     }
     
+    @Override
     public String toString(){ //gop infor lai thanh 1 string
-        return msv + " " + ten + " " + lop + " " + String.format("%.1f", gpa);
+        return msv + " " + ten + " " + lop + " " + nsinh+ " " + String.format("%.1f", gpa);
     }
 }

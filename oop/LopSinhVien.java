@@ -30,10 +30,13 @@ class SinhVien {
     private String ten, nsinh;
     private float m1, m2, m3;
 
-    SinhVien() {
+    public SinhVien() {
+        ten = "";
+        nsinh = "";
+        m1 = 0; m2 = 0; m3 = 0;
     }
     
-    SinhVien(String ten, String nsinh, float m1, float m2, float m3){
+    public SinhVien(String ten, String nsinh, float m1, float m2, float m3){
         this.ten = ten;
         this.nsinh = nsinh;
         this.m1 = m1;
