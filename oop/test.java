@@ -20,9 +20,9 @@ public class test {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        if (6.01 - (int)6.5 == 0)
-            System.out.println("YES");
-        BigInteger x;
+        int x = -1;
+        String res = "Hello " + x;
+        System.out.println(res);
         
     }
 }
