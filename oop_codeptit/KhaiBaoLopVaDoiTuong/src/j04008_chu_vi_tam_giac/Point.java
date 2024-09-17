@@ -1,4 +1,4 @@
-package J04001_KHAI_BAO_LOP_POINT;
+package j04008_chu_vi_tam_giac;
 
 public class Point {
     private double x, y;
