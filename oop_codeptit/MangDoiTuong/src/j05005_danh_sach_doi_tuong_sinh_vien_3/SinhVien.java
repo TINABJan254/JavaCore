@@ -1,38 +1,10 @@
-package oop_codeptit.java_co_ban;
+package j05005_danh_sach_doi_tuong_sinh_vien_3;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.TreeSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.TreeMap;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
-import java.io.*;
 
-public class test {
-    public static void main(String[] args) throws ParseException {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for (int i = 1; i <= n; i++){
-            sc.nextLine();
-            SinhVien a = new SinhVien(i, sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextDouble());
-            System.out.println(a);
-        }
-    }
-}
-
-class SinhVien {
+public class SinhVien {
     private String msv, ten, lop;
     private Date ngaysinh;
     private double gpa;
@@ -52,9 +24,13 @@ class SinhVien {
         this.gpa = gpa;
         ChuanHoa();
     }
+
+    public double getGpa() {
+        return gpa;
+    }
     
     public void ChuanHoa(){
-        String[] a = ten.trim().split("\\s+");
+        String[] a = ten.trim().split("\\s+"); //note: nhớ trim() trước khi split
         String res = "";
         for (int i = 0; i < a.length; i++){
             res += Character.toUpperCase(a[i].charAt(0));
@@ -73,4 +49,3 @@ class SinhVien {
                 + " " + String.format("%.2f", gpa);
     }
 }
-
