@@ -19,7 +19,7 @@ import java.util.TreeMap;
 public class test {
 
     public static void main(String[] args) {
-        System.out.println("Hello");
+        
     }
 }
 
@@ -57,11 +57,24 @@ class C extends T{
 }
 
 /*
+4
 3
-Nguyen Manh Son
-Cong nghe phan mem
-Vu Hoai Nam
-Khoa hoc may tinh
-Dang Minh Tuan
-An toan thong tin
+B20DCCN999
+Nguyen Van An
+D20CQCN04-B
+10.0
+9.0
+8.0
+B20DCAT001
+Le Van Nam
+D20CQAT02-B
+6.0
+6.0
+4.0
+B20DCCN111
+Tran Hoa Binh
+D20CQCN04-B
+9.0
+5.0
+6.0
 */

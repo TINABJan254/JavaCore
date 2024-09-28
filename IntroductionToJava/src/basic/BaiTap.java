@@ -60,7 +60,7 @@ class Thread3 extends Thread{
     }
 }
 
-public class test1 {
+public class BaiTap {
     public static void main(String[] args) {
         Thread1 t1 = new Thread1();
         Thread2 t2 = new Thread2();
