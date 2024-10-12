@@ -1,11 +1,11 @@
-package thuc_hanh1.tong_so_gio_day;
+package j07028_tinh_gio_chuan;
 
 import java.util.*;
 import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException{
-        Scanner sc = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\IntroductionToJava\\src\\thuc_hanh1\\tong_so_gio_day\\MONHOC.in"));
+        Scanner sc = new Scanner(new File("MONHOC.in"));
         int n = sc.nextInt();
         ArrayList<MonHoc> mh = new ArrayList<>();
         for (int i = 0; i < n; i++){
@@ -15,7 +15,7 @@ public class Main {
             mh.add(new MonHoc(mMH, tenMH));
         }
         
-        Scanner sc2 = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\IntroductionToJava\\src\\thuc_hanh1\\tong_so_gio_day\\GIANGVIEN.in"));
+        Scanner sc2 = new Scanner(new File("GIANGVIEN.in"));
         int m = sc2.nextInt();
         ArrayList<GiangVien> gv = new ArrayList<>();
         for (int i = 0; i < m; i++){
@@ -25,7 +25,7 @@ public class Main {
             gv.add(new GiangVien(mGV, tenGV));
         }
         
-        Scanner sc3 = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\IntroductionToJava\\src\\thuc_hanh1\\tong_so_gio_day\\GIOCHUAN.in"));
+        Scanner sc3 = new Scanner(new File("GIOCHUAN.in"));
         int k = sc3.nextInt();
         ArrayList<String> res = new ArrayList<>();
         HashMap<String, Double> hm = new HashMap<>();
@@ -46,3 +46,4 @@ public class Main {
         }
     }
 }
+
