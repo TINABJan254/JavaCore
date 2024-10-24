@@ -4,25 +4,21 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("MATRIX.in"));
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(new File("DATA.in"));
         int t = sc.nextInt();
-        while (t-- > 0){
+        while(t-->0){
             int n = sc.nextInt();
-            int m = sc.nextInt();
-            int col = sc.nextInt();
-            int[][] data = new int[n][m];
-            for (int i = 0; i < n; i++){
-                for (int j = 0; j < m; j++){
-                    data[i][j] = sc.nextInt();
+            boolean check = false;
+            for(int i = 2; i <= 2*Math.sqrt(n); i++){
+                Pair<Integer, Integer> p = new Pair<>(i, n-i);
+                if(p.isPrime()){
+                    System.out.println(p);
+                    check = true;
+                    break; 
                 }
             }
-            
-            Matrix a = new Matrix(n, m, data);
-            a.sortCol(col - 1);
-            
-            System.out.println(a);
-            
+            if(!check) System.out.println(-1);
         }
     }
 }
