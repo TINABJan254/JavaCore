@@ -3,3 +3,4 @@ nbproject
 test
 *.xml
 *mf
+/oop_codeptit/bt_jdbc/target/
