@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package J04007_khai_bao_lop_nhan_vien;
+package j04007_khai_bao_lop_nhan_vien;
 
 /**
  *

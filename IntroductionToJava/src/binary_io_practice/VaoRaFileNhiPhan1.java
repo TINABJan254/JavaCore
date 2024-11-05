@@ -1,4 +1,4 @@
-package BinaryIO_Practice;
+package binary_io_practice;
 
 import java.io.*;
 import java.util.*;

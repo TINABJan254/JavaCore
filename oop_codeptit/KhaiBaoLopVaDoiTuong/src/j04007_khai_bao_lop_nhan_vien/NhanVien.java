@@ -1,4 +1,4 @@
-package J04007_khai_bao_lop_nhan_vien;
+package j04007_khai_bao_lop_nhan_vien;
 
 import java.text.ParseException;
 import java.util.Date;

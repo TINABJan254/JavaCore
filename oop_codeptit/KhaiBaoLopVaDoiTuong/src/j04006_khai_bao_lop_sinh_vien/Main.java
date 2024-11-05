@@ -1,4 +1,4 @@
-package J04006_khai_bao_lop_sinh_vien;
+package j04006_khai_bao_lop_sinh_vien;
 
 import java.util.*;
 import java.text.ParseException;

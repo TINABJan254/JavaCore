@@ -1,4 +1,4 @@
-package J04005_khai_bao_lop_thi_sinh;
+package j04005_khai_bao_lop_thi_sinh;
 
 import java.util.*;
 

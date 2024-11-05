@@ -1,4 +1,4 @@
-package J05081_danh_sach_mat_hang;
+package j05081_danh_sach_mat_hang;
 
 import java.util.*;
 
