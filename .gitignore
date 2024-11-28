@@ -4,3 +4,4 @@ test
 *.xml
 *mf
 /oop_codeptit/bt_jdbc/target/
+/oop_codeptit/csdl-th2/target/

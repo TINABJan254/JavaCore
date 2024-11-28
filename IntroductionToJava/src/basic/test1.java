@@ -1,79 +1,61 @@
 package basic;
 
-import java.util.*;
+import java.util.Scanner;
 
-class Thread1 extends Thread{
-    public static boolean nt(int n){
-        for (int i = 2; i <= Math.sqrt(n); i++){
-            if (n % i == 0){
-                return false;
-            }
-        }
-        return n > 1;
-    }
+public class test1 {
     
-    @Override
-    public void run() {
-        for (int i = 1; i <= 1000; i++) {
-            if (nt(i)) {
-                System.out.print(i + " ");
-            }
-        }
-        System.out.println("");
-    }
-}
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
 
-class Thread2 extends Thread{
-    public static boolean hoanHao(int n) {
-        int s = 1;
-        for (int i = 2; i <= Math.sqrt(n); i++){
-            if (n % i == 0){
-                s += i;
-                if (n / i != i ){
-                    s += n / i;
+        int n = 4; // So tien trinh
+        String[] p = {"P1", "P2", "P3", "P4"};
+        int[] chuKyCpu = new int[n];//Do dai chu ky CPU
+        int[] thoiGianCho = new int[n];// Thoi gian cho
+
+        for (int i = 0; i < n; i++){
+            System.out.print("Nhap do dai chu ky CPU cho tien trinh " + p[i] + ": ");
+            chuKyCpu[i] = sc.nextInt();
+        }
+
+        
+         // Sap xep tien trinh theo Burst Time tang dan (Selection Sort)
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (chuKyCpu[i] > chuKyCpu[j]) {
+                    int temp = chuKyCpu[i];
+                    chuKyCpu[i] = chuKyCpu[j];
+                    chuKyCpu[j] = temp;
+                    
+                    String tmp = p[i];
+                    p[i] = p[j];
+                    p[j] = tmp;
                 }
             }
         }
-        return s == n;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 1; i <= 10000; i++) {
-            if (hoanHao(i)) {
-                System.out.print(i + " ");
-            }
+        
+        // Tinh thoi gian cho
+        thoiGianCho[0] = 0; // Tien trinh dau tien khong co thoi gian cho
+        for (int i = 1; i < n; i++) {
+             thoiGianCho[i] = thoiGianCho[i - 1] + chuKyCpu[i - 1];
         }
-        System.out.println("");
-    }
-}
 
-class Thread3 extends Thread{
-    @Override
-    public void run(){
-        for (int i = 1; i <= 2000; i++){
-            if (i % 3 == 0){
-                System.out.print(i + " ");
-            }
+        // Tinh thoi gian cho trung binh
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += thoiGianCho[i];
         }
-        System.out.println("");
+        double thoiGianChoTrungBinh = (double) sum / n;
+        
+        for (int i = 0; i < n; i++){
+            System.out.println("Thoi gian cho cua tien trinh " +  p[i] + ": " + thoiGianCho[i]);
+        }
+        
+        System.out.print("Thu tu thuc hien theo thuat toan SPF: ");
+        for (int i = 0; i < n; i++){
+            System.out.print(p[i] + " ");
+        }
+        System.out.printf("\nThoi gian cho doi trung binh: %.2f", thoiGianChoTrungBinh);
+        
     }
 }
-
-public class test1 {
-    public static void main(String[] args) {
-        Thread1 t1 = new Thread1();
-        Thread2 t2 = new Thread2();
-        Thread3 t3 = new Thread3();
-        t1.start();
-        t2.start();
-        t3.start();
-    }
-}
-
-/*
-Viết chương trình đa luồng
-luồng 1: in số nguyên tố trong phạm vi 1000
-luồng 2: in số hoàn hảo phạm vi 10000
-luồng 3: in số chia hết cho 3 phạm vi 2000
-*/
