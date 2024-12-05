@@ -30,7 +30,7 @@ public class SinhVien {
     }
     
     public double diemTb(){
-        return (diem1 + diem2 + diem3) / 3.0;
+        return (diem1*3 + diem2*3 + diem3*2) / 8.0;
     }
     
     

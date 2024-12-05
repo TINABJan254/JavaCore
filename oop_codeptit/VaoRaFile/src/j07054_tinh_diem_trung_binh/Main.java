@@ -5,8 +5,8 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException{
-        Scanner sc = new Scanner(System.in);
-//        Scanner sc = new Scanner("BANGDIEM.in");
+//        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(new File("BANGDIEM.in"));
         
         int n = sc.nextInt();
         ArrayList<SinhVien> listSinhVien = new ArrayList<>();
@@ -29,12 +29,17 @@ public class Main {
         });
         
         int rank = 1;
+        int num = 1;
         System.out.println(listSinhVien.get(0) + " 1");
-        for (int i = 0; i < n; i++){
+        for (int i = 1; i < n; i++){
             if (listSinhVien.get(i).diemTb() == listSinhVien.get(i - 1).diemTb()){
                 System.out.println(listSinhVien.get(i) + " " + rank);
-            }
-            System.out.println(listSinhVien.get(i) + " " + (i + 1));
+                ++num;
+            } else {
+                rank += num;
+                System.out.println(listSinhVien.get(i) + " " + rank);
+                num = 1;
+            }            
         }
         
     }
