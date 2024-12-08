@@ -14,7 +14,7 @@ public class Main {
                 }
             }
         }
-        if (n > 1){
+        if (n != 1){
             return n;
         } 
         return res;
@@ -23,7 +23,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while (t-- > 0){
-            long n = sc.nextInt();
+            long n = sc.nextLong();
             System.out.println(findRes(n));
         }
     }   
