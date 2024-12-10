@@ -1,38 +1,41 @@
 package bai9;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        while (t-- > 0){
-            int n = sc.nextInt();
-            ArrayList<Integer> a = new ArrayList<>();
-            HashMap<Integer, Integer> hm = new HashMap<>();
-            for (int i = 0; i < n; i++){
-                int x = sc.nextInt();
-                if (hm.containsKey(x)){
-                    hm.put(x, hm.get(x) + 1);
-                } else {
-                    hm.put(x, 1);
-                    a.add(x);
-                }
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\oop_codeptit\\EndContest\\src\\bai9\\SINHVIEN.in"));
+        int n = Integer.parseInt(sc.nextLine());
+        ArrayList<sinhVien> sv = new ArrayList<>();
+        while (n-- > 0) {
+            sinhVien x = new sinhVien(sc.nextLine(), sc.nextLine(), sc.nextLine());
+            sv.add(x);
+        }
+        HashMap<Integer, String> mp1 = new HashMap<>();
+        sc = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\oop_codeptit\\EndContest\\src\\bai9\\BAITAP.in"));
+        int m = Integer.parseInt(sc.nextLine());
+        for (int i = 1; i <= m; i++) {
+            mp1.put(i, sc.nextLine());
+        }
+        sc = new Scanner(new File("C:\\Hoc_Code\\Code_Java\\oop_codeptit\\EndContest\\src\\bai9\\NHOM.in"));
+        HashMap<String, Integer> mp2 = new HashMap<>();
+        while (sc.hasNext()) {
+            String s = sc.nextLine();
+            String[] x = s.trim().split("\\s+");
+            mp2.put(x[0], Integer.parseInt(x[1]));
+        }
+        Collections.sort(sv, new Comparator<sinhVien>() {
+            @Override
+            public int compare(sinhVien o1, sinhVien o2) {
+                return o1.getMaSV().compareTo(o2.getMaSV());
             }
-            
-            Collections.sort(a, new Comparator<Integer>(){
-                @Override
-                public int compare(Integer o1, Integer o2){
-                    return hm.get(o2) - hm.get(o1);
-                }
-            });
-            
-            for (Integer x : a){
-                for (int i = 0; i < hm.get(x); i++){
-                    System.out.print(x + " ");
-                }
-            }
-            System.out.println("");
+        });
+        for (sinhVien x : sv) {
+            System.out.print(x);
+            Integer stt = mp2.get(x.getMaSV());
+            System.out.println(" " + stt + " " + mp1.get(stt));
         }
     }
 }
